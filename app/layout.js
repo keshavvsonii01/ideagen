@@ -26,7 +26,6 @@ export default function RootLayout({ children }) {
                   <Link href="/" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
                     Home
                   </Link>
-                  {/* Add more navigation items here if needed */}
                 </div>
               </div>
             </div>
