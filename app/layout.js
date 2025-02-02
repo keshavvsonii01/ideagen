@@ -1,8 +1,12 @@
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { Montserrat } from "next/font/google" 
 import Link from "next/link"
 
-const inter = Inter({ subsets: ["latin"] })
+
+const montserrat = Montserrat({
+  subsets: ['latin'],  
+  weight: ['400', '700'],
+});
 
 export const metadata = {
   title: "AI-Powered TikTok/Reels Idea Generator",
@@ -12,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-50`}>
+      <body className={`${montserrat.className} bg-gray-50`}>
         <div className="min-h-screen flex flex-col">
           <nav className="bg-white shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
