@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import { ClipboardDocumentIcon } from "@heroicons/react/24/outline";
+import { MagicCard } from "@/components/magicui/magic-card";
 
 export default function Result() {
   const params = useParams();
@@ -42,13 +43,17 @@ export default function Result() {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div className="min-h-screen py-12 px-4 sm:px-8 lg:px-12">
-        <div className="w-full border border-gray-100 rounded-lg mt-20">
+    <div className="flex justify-center items-center min-h-screen">
+      <div className=" py-12 px-4 sm:px-8 lg:px-12">
+        <MagicCard
+          className="cursor-pointer flex-col items-center justify-center  shadow-2xl p-5 mt-6 md:p-12 lg:p-20"
+          gradientColor={"#262626"}
+        >
+        <div className="w-full rounded-lg">
           <h1 className="text-3xl font-bold text-center text-zinc-300 mb-8">
             Your Generated TikTok/Reels Idea
           </h1>
-          <div className="bg-black shadow-lg rounded-lg p-6 mb-6 relative">
+          <div className="bg-transparent shadow-lg rounded-lg p-6 mb-6 relative">
             <pre className="whitespace-pre-wrap text-zinc-300 text-sm leading-relaxed">
               {generatedIdea}
             </pre>
@@ -69,6 +74,7 @@ export default function Result() {
             </Link>
           </div>
         </div>
+        </MagicCard>
       </div>
     </div>
   );
