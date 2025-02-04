@@ -38,8 +38,8 @@ export default function First() {
             "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]"
           )}
         />
-          <div className="flex items-center justify-center mb-10 md:mt-4">
-            <button className=" z-10 bg-zinc-700 text-zinc-200 hover:text-zinc-300 hover:bg-zinc-800 text-lg font-semibold px-6 py-2  rounded-lg mt-8">
+          <div className="flex items-center justify-center mb-10    hover:-z-10 md:mt-4  ">
+            <button className="z-10 border-gray-100 border text-zinc-400 hover:bg-zinc-100 hover:text-black text-lg font-semibold px-6 py-2 rounded-2xl mt-8">
               <Link href="/">Get Started</Link>
             </button>
           </div>

@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             </div>
           </nav>
           <main className="flex">{children}</main>
-          <footer className="bg-neutral-800 bg-gradient-to-tl from-neutral-800 to-stone-800 border-t border-gray-900 py-4">
+          <footer className="bg-black border-gray-900 py-4">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-center text-gray-500 text-sm">
                 © {new Date().getFullYear()} AI-Powered TikTok/Reels Idea Generator. All rights reserved.
