@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export function MagicCard({
   children,
   className,
-  gradientSize = 220,
+  gradientSize = 300,
   gradientColor = "#262626",
   gradientOpacity = 0.85,
   gradientFrom = "#9E7AFF",

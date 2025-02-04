@@ -27,7 +27,7 @@ export default function First() {
         {" "}
         
         <div className="mb-20 mt-24 md:mb-24 md:mt-28 lg:mb-28 lg:mt-32">
-          <h1 className="z-10 text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-100 text-center">
+          <h1 className="z-20 text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-100 text-center">
             AUTOMATE YOUR CREATIVE WORKFLOW
           </h1>
           <p className="z-10 text-2xl text-zinc-300 text-center mt-8">
@@ -35,11 +35,11 @@ export default function First() {
           </p>
           <DotPattern
           className={cn(
-            "[mask-image:radial-gradient(900px_circle_at_center,white,transparent)]"
+            "[mask-image:radial-gradient(900px_circle_at_center,#f3f4f6,transparent)]"
           )}
         />
-          <div className="flex items-center justify-center mb-10    hover:-z-10 md:mt-4  ">
-            <button className="z-10 border-gray-100 border text-zinc-400 hover:bg-zinc-100 hover:text-black text-lg font-semibold px-6 py-2 rounded-2xl mt-8">
+          <div className="flex items-center justify-center mb-10  hover:-z-10 md:mt-4  ">
+            <button className="border-gray-100 border text-zinc-400 hover:bg-zinc-100 hover:text-black text-lg font-semibold px-6 py-2 rounded-2xl mt-8">
               <Link href="/">Get Started</Link>
             </button>
           </div>
