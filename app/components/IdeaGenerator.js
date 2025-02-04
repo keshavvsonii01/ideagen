@@ -52,7 +52,7 @@ export default function IdeaGenerator() {
               gradientColor={"#262626"}
             >
               <div className="flex items-center justify-center">
-                <h2 className="text-2xl  lg:text-3xl text-center font-semibold mb-6 text-zinc-300">
+                <h2 className="text-2xl  lg:text-3xl text-center  mb-6 text-zinc-300">
                   Get your script in just a few clicks-
                 </h2>
               </div>
