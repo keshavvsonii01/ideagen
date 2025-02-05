@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai"
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'AIzaSyAzKBNNc_R4LT1m9a-lgobBUzqPQ2t_GaY')
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY )
 
 export async function POST(request) {
   const { phrase, contentType, people, location, tone } = await request.json()
@@ -12,7 +12,7 @@ export async function POST(request) {
     - Location: ${location}
     - Tone: ${tone}
 
-    Please provide:
+    Please provide the output with -
     1. A catchy title for the video
     2. A brief description of the video concept (2-3 sentences)
     3. A step-by-step outline of the video (3-5 steps)
