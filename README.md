@@ -9,21 +9,16 @@
 - Provides multiple variations based on trends, tone, and content type.
 
 ### 2. **Content Type Selection**
-- Choose between **comedy, educational, dramatic, storytelling, vlogs, interviews,** and more.
+- Choose between **comedy, educational, dramatic,** and more.
 
 ### 3. **Customizable Storylines**
 - Define the **number of people** involved (solo, duo, group collaboration).
-- Select the **shooting location** (indoor, outdoor, office, studio, city streets, etc.).
+- Select the **shooting location** (indoor, outdoor, office, etc.).
 - Customize the **mood and tone** of the video.
 
 ### 4. **Social Media Optimization**
 - Suggests **trending hashtags** and **popular audio/music tracks**.
 - Provides **editing tips** and **best video practices** to maximize engagement.
-
-### 5. **User Authentication & Profile Management**
-- Secure authentication with **Next.js Auth**.
-- Users can **save favorite scripts**, track past generations, and receive personalized recommendations.
-- **Login with Instagram and TikTok** to personalize content ideas based on past trends.
 
 ## 🛠️ Tech Stack
 ### **Frontend:**
@@ -32,13 +27,9 @@
 
 ### **Backend:**
 - **Node.js & Next.js API Routes** – Handles API calls and integrations.
-- **MongoDB** – Stores user data and saved scripts.
-
+- 
 ### **AI Integration:**
 - **Gemini API** – Powers script and storyline generation.
-
-### **Authentication:**
-- **NextAuth.js** – Supports email, Google, Instagram, and TikTok logins.
 
 ## 🚀 Getting Started
 ### **1. Clone the Repository**
@@ -55,12 +46,7 @@ npm install
 ### **3. Set Up Environment Variables**
 Create a `.env.local` file and add:
 ```
-NEXT_PUBLIC_GEMINI_API_KEY=your-gemini-api-key
-MONGODB_URI=your-mongodb-connection-string
-NEXTAUTH_SECRET=your-nextauth-secret
-NEXTAUTH_URL=http://localhost:3000
-INSTAGRAM_CLIENT_ID=your-instagram-client-id
-INSTAGRAM_CLIENT_SECRET=your-instagram-client-secret
+GEMINI_API_KEY=your-gemini-api-key
 ```
 
 ### **4. Run the Development Server**
@@ -69,18 +55,13 @@ npm run dev
 ```
 Open `http://localhost:3000` in your browser.
 
-## 📌 Deployment
-### Deploying to **Vercel**
-```bash
-vercel deploy
-```
-- Ensure environment variables are added in the **Vercel Dashboard**.
 
 ## 📖 Roadmap & Future Enhancements
+- 🔹 **Google Authentication** – Provide Industry level authentication for easier access and saving scripts.
 - 🔹 **AI Video Editing Suggestions** – Provide step-by-step editing instructions.
 - 🔹 **Collaboration Feature** – Allow multiple users to co-create scripts.
 - 🔹 **Monetization** – Premium plans for advanced script suggestions.
-- 🔹 **TikTok & Instagram API Integration** – Fetch trending data for personalized recommendations.
+- 🔹 **TikTok & Instagram API Integration** – Fetch trending data for personalized recommendations and accessing profile options on the go.
 
 ## 🤝 Contributing
 Feel free to fork the repo and submit pull requests. We welcome contributions to improve **IdeaGen**!
@@ -90,9 +71,8 @@ This project is **open-source** under the **MIT License**.
 
 ## 📞 Contact & Support
 - 💡 **Website:** [yourwebsite.com](https://yourwebsite.com)
-- 📧 **Email:** support@yourwebsite.com
-- 🐦 **Twitter:** [@yourhandle](https://twitter.com/yourhandle)
+- 📧 **Email:** keshavvsonii01@gmail.com
+- 🐦 **Twitter:** [@Keshavv01](https://x.com/Keshavv01)
 
 ---
 🎬 **Turn your ideas into viral videos with IdeaGen! 🚀**
-
