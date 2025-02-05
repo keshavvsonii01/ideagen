@@ -43,7 +43,7 @@ export default function IdeaGenerator() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div id="Generator" className="flex items-center justify-center min-h-screen">
       <div className="w-4/5 md:w-2/3">
         <div className="bg-black shadow-xl rounded-lg mb-8">
           <div>
