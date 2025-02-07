@@ -9,9 +9,31 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "AI-Powered TikTok/Reels Idea Generator",
-  description: "Generate creative ideas for your TikTok and Reels content",
+  title: "AI TikTok/Reels Idea Generator - Get Viral Ideas",
+  description: "Generate trending TikTok and Reels video ideas with AI-powered scripts and storyline suggestions.",
+  keywords: ["TikTok ideas", "Reels ideas", "AI video content", "trending content", "viral video ideas", "script generator", "reels script generator", "tiktok script generator"],
+  openGraph: {
+    title: "AI TikTok/Reels Idea Generator",
+    description: "AI-driven platform for brainstorming creative TikTok and Instagram Reels video concepts.",
+    images: [
+      {
+        url: "https://example.com/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "AI TikTok Reels Generator",
+      },
+    ],
+    type: "website",
+    url: "https://www.ideagenie.netlify.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI TikTok/Reels Idea Generator",
+    description: "AI-driven tool to brainstorm viral TikTok & Reels ideas.",
+    images: ["https://example.com/twitter-image.jpg"],
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
