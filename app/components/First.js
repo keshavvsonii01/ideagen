@@ -1,3 +1,5 @@
+'use client'
+
 import { cn } from "@/lib/utils";
 import { DotPattern } from "@/components/magicui/dot-pattern";
 
@@ -23,21 +25,31 @@ export default function First() {
       </div> */}
       <div className="flex items-center justify-center min-h-screen">
         {" "}
-        <div className="mb-20 mt-24 md:mb-24 md:mt-28 lg:mb-28 lg:mt-32">
-          <h1 className="z-20 text-5xl md:text-6xl lg:text-7xl font-bold text-zinc-100 text-center">
-            AUTOMATE YOUR CREATIVE WORKFLOW
+        <div className="mb-20 mt-24 md:mb-24 md:mt-28 lg:mb-32 lg:mt-28">
+          <h1 className="z-20 text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-100 text-center">
+            GENERATE CLEAR IDEAS IN SECONDS
           </h1>
           <p className="z-10 text-2xl text-zinc-300 text-center mt-8">
-            Create and brainstorm your ideas with ease.
+            IdeaGen helps founders and creators quickly generate ideas they can
+            actually use.
           </p>
           <DotPattern
             className={cn(
-              "[mask-image:radial-gradient(900px_circle_at_center,#f3f4f6,transparent)]"
+              "[mask-image:radial-gradient(900px_circle_at_center,#f3f4f6,transparent)]",
             )}
           />
           <div className="flex items-center justify-center mb-10  hover:-z-10 md:mt-4  ">
-            <button className=" text-zinc-300 hover:bg-zinc-100 hover:text-black text-lg font-semibold px-6 py-2 rounded-2xl mt-8 flex items-center justify-between">
-              <Link href="#Generator">Get Started Below! </Link>
+            <button
+              className=" text-black text-lg font-semibold px-6 py-2 rounded-2xl bg-zinc-50 mt-8 flex items-center justify-between hover:scale-105 transition-transform duration-200 hover:shadow-lg"
+              onClick={() => {
+                setTimeout(() => {
+                  document
+                    .getElementById("Generator")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                }, 120);
+              }}
+            >
+              Generate Ideas
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -50,14 +50,6 @@ export default function RootLayout({ children }) {
                     </span>
                   </Link>
                 </div>
-                <div className="flex items-center">
-                  <Link
-                    href="/"
-                    className="text-gray-400 hover:text-gray-700 px-3 py-2 rounded-md text-sm md:text-lg lg:text-xl font-medium"
-                  >
-                    Home
-                  </Link>
-                </div>
               </div>
             </div>
           </nav>

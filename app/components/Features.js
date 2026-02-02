@@ -54,9 +54,9 @@ const features = [
   },
   {
     Icon: BellIcon,
-    name: "Collaboration & Editing Tips",
+    name: "Editing & Flow Tips",
     description:
-      "Receive duet ideas, transition effects, and video structuring guidance.",
+      "Get transition ideas, pacing tips, and video structure guidance.",
     href: "/",
     cta: "Learn more",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,

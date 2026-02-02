@@ -1,40 +1,88 @@
-import { GoogleGenerativeAI } from "@google/generative-ai"
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY )
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export async function POST(request) {
-  const { phrase, contentType, people, location, tone } = await request.json()
+  const {
+    phrase,
+    contentType,
+    people,
+    location,
+    tone,
+  } = await request.json();
 
-  const prompt = `Generate a TikTok/Reels video idea based on the following parameters:
-    - Topic or phrase: ${phrase}
-    - Content type: ${contentType}
-    - Number of people: ${people}
-    - Location: ${location}
-    - Tone: ${tone}
+  const prompt = `
+You are an API that returns ONLY valid JSON. No markdown. No explanations.
 
-    Please provide the output with -
-    1. A catchy title for the video
-    2. A brief description of the video concept (2-3 sentences)
-    3. A step-by-step outline of the video (3-5 steps)
-    4. Suggested hashtags (5-7 hashtags)
-    5. A music recommendation that fits the video concept`
+Generate a TikTok/Reels video idea using the input below.
 
-  try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" })
-    const result = await model.generateContent(prompt)
-    const response = await result.response
-    const text = response.text()
+Topic: ${phrase}
+${contentType ? `Content type: ${contentType}` : ""}
+${people ? `People: ${people}` : ""}
+${location ? `Location: ${location}` : ""}
+${tone ? `Tone: ${tone}` : ""}
 
-    return new Response(JSON.stringify({ generatedIdea: text }), {
-      headers: { "Content-Type": "application/json" },
-      status: 200,
-    })
-  } catch (error) {
-    console.error("Error generating idea:", error)
-    return new Response(JSON.stringify({ error: "Failed to generate idea" }), {
-      headers: { "Content-Type": "application/json" },
-      status: 500,
-    })
+Return JSON strictly in this format:
+
+{
+  "title": "Catchy video title",
+  "description": "2-3 sentence description",
+  "steps": [
+    "Step 1",
+    "Step 2",
+    "Step 3"
+  ],
+  "hashtags": [
+    "hashtag1",
+    "hashtag2"
+  ],
+  "music": {
+    "name": "Song name or sound",
+    "reason": "Why this music fits"
   }
 }
+`;
 
+  try {
+    const model = genAI.getGenerativeModel({
+      model: "gemini-2.5-flash",
+    });
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+
+    // 🔒 Parse + normalize (critical)
+    const parsed = JSON.parse(text);
+
+    const structuredResponse = {
+      meta: {
+        phrase,
+        contentType: contentType ?? null,
+        people: people ?? null,
+        location: location ?? null,
+        tone: tone ?? null,
+      },
+      title: parsed.title,
+      description: parsed.description,
+      steps: parsed.steps ?? [],
+      hashtags: parsed.hashtags ?? [],
+      music: {
+        name: parsed.music?.name ?? "",
+        reason: parsed.music?.reason ?? "",
+      },
+    };
+
+    return new Response(JSON.stringify(structuredResponse), {
+      headers: { "Content-Type": "application/json" },
+      status: 200,
+    });
+  } catch (error) {
+    console.error("Error generating structured idea:", error);
+
+    return new Response(
+      JSON.stringify({ error: "Failed to generate idea" }),
+      { status: 500 }
+    );
+  }
+}
