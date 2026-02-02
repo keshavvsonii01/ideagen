@@ -42,11 +42,11 @@ export default function First() {
             <button
               className=" text-black text-lg font-semibold px-6 py-2 rounded-2xl bg-zinc-50 mt-8 flex items-center justify-between hover:scale-105 transition-transform duration-200 hover:shadow-lg"
               onClick={() => {
+                const el = document.getElementById("Generator");
+                el?.scrollIntoView({ behavior: "smooth", block: "start" });
                 setTimeout(() => {
-                  document
-                    .getElementById("Generator")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" });
-                }, 120);
+                  el?.querySelector("input")?.focus();
+                }, 500);
               }}
             >
               Generate Ideas

@@ -61,7 +61,7 @@ export default function IdeaGenerator() {
         >
           {/* Heading */}
           <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-bold text-zinc-300">
+            <h2 className="text-2xl lg:text-3xl font-bold text-zinc-200">
               Describe your idea. We’ll handle the rest.
             </h2>
             <p className="text-lg font-light text-zinc-400 mt-2">
@@ -76,7 +76,6 @@ export default function IdeaGenerator() {
                 What do you want ideas for?
               </label>
               <input
-                autoFocus
                 type="text"
                 value={phrase}
                 onChange={(e) => setPhrase(e.target.value)}
